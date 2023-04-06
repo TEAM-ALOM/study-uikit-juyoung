@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
     
     var helloWorldLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 88, width: UIScreen.main.bounds.width, height: 60))
+        let label = UILabel()
         
         label.text = "Hello World!"
         label.textAlignment = .center
@@ -24,7 +25,14 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .blue
         
         view.addSubview(helloWorldLabel)
+        
+        helloWorldLabel.snp.makeConstraints {
+            $0.width.height.equalTo(100)
+            $0.center.equalToSuperview()
+        }
     }
+    
+    
 
 
 }
