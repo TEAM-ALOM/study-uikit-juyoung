@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         
         label.text = "Hello World!"
         label.textAlignment = .center
+        label.backgroundColor = .yellow
         return label
     }()
 
@@ -27,8 +28,7 @@ class ViewController: UIViewController {
         view.addSubview(helloWorldLabel)
         
         helloWorldLabel.snp.makeConstraints {
-            $0.width.height.equalTo(100)
-            $0.center.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalToSuperview().inset(50)
         }
     }
     
